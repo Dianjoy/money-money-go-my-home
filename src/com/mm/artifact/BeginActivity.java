@@ -31,6 +31,15 @@ public class BeginActivity extends BaseActivity {
 
 		setContentView(R.layout.begin);
 		UmengUpdateAgent.update(this);
+		MobclickAgent.updateOnlineConfig( this );
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				String value = MobclickAgent.getConfigParams( BeginActivity.this, "url" )+"";
+				LockService.shareUrl = value;
+			}
+		}).start();
 		tv_begin = (TextView) findViewById(R.id.tv_begin);
 		tv_begin.setOnClickListener(this);
 		tv_more = (TextView) findViewById(R.id.tv_more);

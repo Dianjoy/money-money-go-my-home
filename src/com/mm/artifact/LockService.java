@@ -15,6 +15,8 @@ import android.telephony.TelephonyManager;
 
 public class LockService extends Service {
 	private Intent zdLockIntent = null;
+	
+	public static String shareUrl = "";
 	// private String download_url, version;
 	private KeyguardManager mKeyguardManager = null;
 	public static KeyguardManager.KeyguardLock mKeyguardLock = null;
