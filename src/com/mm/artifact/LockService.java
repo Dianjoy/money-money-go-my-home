@@ -116,11 +116,13 @@ public class LockService extends Service {
 //				}
 				System.out.println("接收到了aaaaaaaa广播");
 				if(Utils.getQHBState(getApplicationContext()) == false){
+					System.out.println("红包开关关闭状态");
 					return;
 				}
 				
 				if(Utils.getDontDisturb(getApplicationContext()) == true){
 					if(Utils.isDontDisturbTime() == true){
+						System.out.println("免打扰状态");
 						return;
 					}
 				}
@@ -132,6 +134,7 @@ public class LockService extends Service {
 					Utils.vibrate(getApplicationContext());
 					SoundUtil.getInstance(getApplicationContext()).playSound(SoundUtil.SOUND_TYPE_EARN_MONEY);
 				}
+				System.out.println("------------准备开启红包提示页面---------");
 				startActivity(zdLockIntent);
 			}
 //			else if (action.equals(Intent.ACTION_SCREEN_ON)) {

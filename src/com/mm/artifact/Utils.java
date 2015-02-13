@@ -176,16 +176,22 @@ public class Utils {
 
 	/** 是否是免打扰时段 */
 	public static boolean isDontDisturbTime() {
-		Calendar date = Calendar.getInstance();// 获取当前时间
-		Calendar date1 = (Calendar) date.clone();// 复制
-		Calendar date2 = (Calendar) date.clone();// 复制
-		date1.set(Calendar.HOUR, 0);// 将一个时间设为当前8:00
-		date1.set(Calendar.MINUTE, 0);
-		date1.set(Calendar.SECOND, 0);
-		date2.set(Calendar.HOUR, 8);// 将第二个时间设为当前17:00
-		date2.set(Calendar.MINUTE, 0);
-		date2.set(Calendar.SECOND, 0);
-		if (date.after(date1) && date.before(date2)) {
+//		Calendar date = Calendar.getInstance();// 获取当前时间
+//		Calendar date1 = (Calendar) date.clone();// 复制
+//		Calendar date2 = (Calendar) date.clone();// 复制
+//		date1.set(Calendar.HOUR, 0);// 将一个时间设为当前8:00
+//		date1.set(Calendar.MINUTE, 0);
+//		date1.set(Calendar.SECOND, 0);
+//		date2.set(Calendar.HOUR, 8);// 将第二个时间设为当前17:00
+//		date2.set(Calendar.MINUTE, 0);
+//		date2.set(Calendar.SECOND, 0);
+//		if (date.after(date1) && date.before(date2)) {
+//			return true;
+//		}
+//		return false;
+		Date date = new Date();
+		System.out.println(String.valueOf(date.getHours()));
+		if (date.getHours() > 0 & date.getHours() < 8) {
 			return true;
 		}
 		return false;
