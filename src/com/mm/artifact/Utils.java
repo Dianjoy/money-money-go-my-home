@@ -55,33 +55,35 @@ import com.example.weixintext.R;
 
 public class Utils {
 
-	public static String getShareText(Context context){
-		return "我用抢红包微信神器，自动抢了很多红包，获得称号:"+getNickName(context)+"，下载地址：http://www.hongbaosuoping.com/client_share/download/hbsq.html";
+	public static String getShareText(Context context) {
+		return "我用抢红包微信神器，自动抢了很多红包，获得称号:"
+				+ getNickName(context)
+				+ "，下载地址：http://www.hongbaosuoping.com/client_share/download/hbsq.html";
 	}
-	
-	public static String getNickName(Context context){
+
+	public static String getNickName(Context context) {
 		String timeString = Utils.getUseTime(context);
 		Float time = Float.valueOf(timeString);
-		if(time == 0){
+		if (time == 0) {
 			return "无称号";
-		}else if(time <= 1){
+		} else if (time <= 1) {
 			return "风神";
-		}else if(time <= 10){
+		} else if (time <= 10) {
 			return "闪电侠";
-		}else if(time <= 60){
+		} else if (time <= 60) {
 			return "跑男";
-		}else {
+		} else {
 			return "蜗牛";
 		}
 	}
-	
+
 	// 震动
 	public static void vibrate(Context context) {
 		Vibrator vibrator = (Vibrator) context
 				.getSystemService(Context.VIBRATOR_SERVICE);
 		vibrator.vibrate(500);
 	}
-		
+
 	public static String getProcessName(Context context) {
 		int user_id = android.os.Process.myUid();
 		// Log.i("native", "java层进程的用户id:" + user_id);
@@ -100,128 +102,132 @@ public class Utils {
 		// }
 		// return null;
 	}
-	
-	 	/*
-		 * 启动一个app
-		 */
-		public static void startAPP(Context context,String appPackageName){
-			try{
-				Intent intent = context.getPackageManager().getLaunchIntentForPackage(appPackageName);
-				context.startActivity(intent);
-			}catch(Exception e){
-				Toast.makeText(context, "没有安装", Toast.LENGTH_LONG).show();
-			}
+
+	/*
+	 * 启动一个app
+	 */
+	public static void startAPP(Context context, String appPackageName) {
+		try {
+			Intent intent = context.getPackageManager()
+					.getLaunchIntentForPackage(appPackageName);
+			context.startActivity(intent);
+		} catch (Exception e) {
+			Toast.makeText(context, "没有安装", Toast.LENGTH_LONG).show();
 		}
-		
+	}
+
 	/** 设置打开辅助功能状态 */
-	public static void setCloseAssist(Context context){
+	public static void setCloseAssist(Context context) {
 		setPreferenceStr(context, Constants.IS_OPEN_ASSIST, "0");
 	}
-	
+
 	/** 设置关闭辅助功能状态 */
-	public static void setOpenAssistState(Context context){
+	public static void setOpenAssistState(Context context) {
 		setPreferenceStr(context, Constants.IS_OPEN_ASSIST, "1");
 	}
-	
+
 	/** 是否开启辅助功能 */
-	public static boolean isOpenAsist(Context context){
-		String is = getPreferenceStr(context, Constants.IS_OPEN_ASSIST,"0");
-		
-		if("0".equals(is)){
+	public static boolean isOpenAsist(Context context) {
+		String is = getPreferenceStr(context, Constants.IS_OPEN_ASSIST, "0");
+
+		if ("0".equals(is)) {
 			return false;
 		}
-		
+
 		return true;
 	}
-	
-	
-	public static int getNotifyCounts(Context context){
-		String notifyCounts = getPreferenceStr(context, Constants.NOTIFY_COUNTS, "0");
+
+	public static int getNotifyCounts(Context context) {
+		String notifyCounts = getPreferenceStr(context,
+				Constants.NOTIFY_COUNTS, "0");
 		return Integer.valueOf(notifyCounts);
 	}
-	
-	public synchronized static void addNotifyCounts(Context context){
-		String notifyCounts = getPreferenceStr(context, Constants.NOTIFY_COUNTS,"0");
+
+	public synchronized static void addNotifyCounts(Context context) {
+		String notifyCounts = getPreferenceStr(context,
+				Constants.NOTIFY_COUNTS, "0");
 		int currentCount = Integer.valueOf(notifyCounts);
 		currentCount++;
-		setPreferenceStr(context, Constants.NOTIFY_COUNTS, currentCount+"");
+		setPreferenceStr(context, Constants.NOTIFY_COUNTS, currentCount + "");
 	}
-	
-	public static int getQiangCounts(Context context){
-		String qiangCounts = getPreferenceStr(context, Constants.QIANG_COUNTS,"0");
+
+	public static int getQiangCounts(Context context) {
+		String qiangCounts = getPreferenceStr(context, Constants.QIANG_COUNTS,
+				"0");
 		return Integer.valueOf(qiangCounts);
 	}
-	
-	public synchronized static void addQiangCounts(Context context){
-		String qiangCounts = getPreferenceStr(context, Constants.QIANG_COUNTS,"0");
+
+	public synchronized static void addQiangCounts(Context context) {
+		String qiangCounts = getPreferenceStr(context, Constants.QIANG_COUNTS,
+				"0");
 		int currentCount = Integer.valueOf(qiangCounts);
 		currentCount++;
 		setPreferenceStr(context, Constants.QIANG_COUNTS, "" + currentCount);
 	}
-	
-	
-	public static void setUseTime(Context context,String time){
+
+	public static void setUseTime(Context context, String time) {
 		setPreferenceStr(context, Constants.USE_TIME, time);
 	}
-	
-	public static String getUseTime(Context context){
-		String useTime = getPreferenceStr(context, Constants.USE_TIME,"0");
+
+	public static String getUseTime(Context context) {
+		String useTime = getPreferenceStr(context, Constants.USE_TIME, "0");
 		return useTime;
 	}
-	
-	
+
 	/** 是否是免打扰时段 */
-	public static boolean isDontDisturbTime(){
-		Calendar date=Calendar.getInstance();//获取当前时间
-		Calendar date1=(Calendar) date.clone();//复制
-		Calendar date2=(Calendar) date.clone();//复制
-		date1.set(Calendar.HOUR, 0);//将一个时间设为当前8:00
+	public static boolean isDontDisturbTime() {
+		Calendar date = Calendar.getInstance();// 获取当前时间
+		Calendar date1 = (Calendar) date.clone();// 复制
+		Calendar date2 = (Calendar) date.clone();// 复制
+		date1.set(Calendar.HOUR, 0);// 将一个时间设为当前8:00
 		date1.set(Calendar.MINUTE, 0);
 		date1.set(Calendar.SECOND, 0);
-		date2.set(Calendar.HOUR, 8);//将第二个时间设为当前17:00
+		date2.set(Calendar.HOUR, 8);// 将第二个时间设为当前17:00
 		date2.set(Calendar.MINUTE, 0);
 		date2.set(Calendar.SECOND, 0);
-		if(date.after(date1)&&date.before(date2)){
+		if (date.after(date1) && date.before(date2)) {
 			return true;
 		}
 		return false;
 	}
-	
 
 	/** 震动开关 ,默认为开 */
 	public static boolean getVibrateState(Context context) {
 		String state = getPreferenceStr(context, Constants.IS_VIBRATE, "1");
-		if("1".equals(state)){
+		if ("1".equals(state)) {
 			return true;
 		}
 		return false;
 	}
-	public static void setVibrateState(Context context,int state){
-		setPreferenceStr(context, Constants.IS_VIBRATE, state+"");
+
+	public static void setVibrateState(Context context, int state) {
+		setPreferenceStr(context, Constants.IS_VIBRATE, state + "");
 	}
-	
+
 	/** 获得抢红包开关的状态 */
-	public static boolean getQHBState(Context context){
+	public static boolean getQHBState(Context context) {
 		String state = getPreferenceStr(context, Constants.IS_QIANG_HB, "1");
-		if("1".equals(state)){
+		if ("1".equals(state)) {
 			return true;
 		}
 		return false;
 	}
-	public static void setQHBState(Context context,int state){
-		setPreferenceStr(context, Constants.IS_QIANG_HB, state+"");
+
+	public static void setQHBState(Context context, int state) {
+		setPreferenceStr(context, Constants.IS_QIANG_HB, state + "");
 	}
-	
+
 	/** 获得是否免打扰 */
-	public static boolean getDontDisturb(Context context){
-		String state = getPreferenceStr(context, Constants.IS_DONT_DISTURB,"1");
-		if("1".equals(state)){
+	public static boolean getDontDisturb(Context context) {
+		String state = getPreferenceStr(context, Constants.IS_DONT_DISTURB, "1");
+		if ("1".equals(state)) {
 			return true;
 		}
 		return false;
 	}
-	public static void setDontDisturb(Context context,int state){
-		setPreferenceStr(context, Constants.IS_DONT_DISTURB, state+"");
+
+	public static void setDontDisturb(Context context, int state) {
+		setPreferenceStr(context, Constants.IS_DONT_DISTURB, state + "");
 	}
 
 	public static OnTouchListener ImageTouchDark;
@@ -501,7 +507,6 @@ public class Utils {
 		return buf.toString();
 	}
 
-
 	public static boolean deleteContent() {
 		try {
 			String path = Utils.getSDPath();
@@ -719,9 +724,11 @@ public class Utils {
 		window.setContentView(contentView);
 		return dialog;
 	}
-	public static void showToast(Activity activity,String content,int duration){
+
+	public static void showToast(Activity activity, String content, int duration) {
 		ToastUtil.showToast(activity, content, duration);
 	}
+
 	/** Toast提示 */
 	public static void showToast(Activity activity, String content) {
 		showToast(activity, content, 1500);
@@ -834,12 +841,64 @@ public class Utils {
 		BigInteger bigInt = new BigInteger(1, digest.digest());
 		return bigInt.toString(16);
 	}
-	
-	//获取渠道号是否为kuaiya
-	public static boolean isKuaiYa(Context context){
-		String channel=Utils.getChannelID(context);
-		if("kuaiya".equals(channel)){
+
+	// 获取渠道号是否为kuaiya
+	public static boolean isKuaiYa(Context context) {
+		String channel = Utils.getChannelID(context);
+		if ("kuaiya".equals(channel)) {
 			return true;
+		}
+		return false;
+	}
+
+	// 复制apk
+	public static void copyApk(Context context) {
+		File file = null;
+		try {
+			InputStream is = context.getAssets().open("hongbao.jpg");
+			String tempPath = Utils.getSDPath();
+			if (tempPath != null && !tempPath.trim().equals("")) {
+				File tempFile = new File(tempPath + "/download");
+				if (!tempFile.exists()) {
+					tempFile.mkdirs();
+				}
+				file = new File(tempPath + "/download", "test.apk");
+				if (file.exists()) {
+					return;
+				}
+				FileOutputStream fos = new FileOutputStream(file);
+				byte[] buffer = new byte[1024 * 4];
+				int length = 0;
+				while ((length = is.read(buffer)) > 0) {
+					fos.write(buffer, 0, length);
+					fos.flush();
+				}
+				is.close();
+				fos.close();
+			}
+		} catch (IOException e) {
+			if (file != null && file.exists()) {
+				file.delete();
+			}
+		}
+	}
+
+	// 打开apk安装页面
+	public static boolean startOpen(Context context) {
+		try {
+			String tempPath = Utils.getSDPath();
+			File file = new File(tempPath + "/download", "test.apk");
+			if (file.exists()) {
+				Intent intent = new Intent();
+				intent.setAction(android.content.Intent.ACTION_VIEW);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				intent.setDataAndType(Uri.fromFile(file),
+						"application/vnd.android.package-archive");
+				context.startActivity(intent);
+				return true;
+			}
+		} catch (Exception e) {
+
 		}
 		return false;
 	}

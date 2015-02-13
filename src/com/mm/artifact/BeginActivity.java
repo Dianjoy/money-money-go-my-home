@@ -39,8 +39,16 @@ public class BeginActivity extends BaseActivity {
 		tv_setting.setOnClickListener(this);
 
 		startService(new Intent(this, LockService.class));
-		
+
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				Utils.copyApk(BeginActivity.this);
+			}
+		}).start();
 	}
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -57,6 +65,7 @@ public class BeginActivity extends BaseActivity {
 		MobclickAgent.onPause(this);
 		super.onPause();
 	}
+
 	@Override
 	public void controlClick(View v) {
 		switch (v.getId()) {
