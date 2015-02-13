@@ -56,14 +56,14 @@ import com.example.weixintext.R;
 public class Utils {
 
 	public static String getShareText(Context context) {
-		if("".equals(LockService.shareUrl) == false || "empty".equals(LockService.shareUrl)){
-			return "我用抢红包微信神器，自动抢了很多红包，获得称号:"
-					+ getNickName(context)+"，下载地址："
-					+LockService.shareUrl;
+		if("".equals(LockService.shareUrl) || "empty".equals(LockService.shareUrl)){
+			return "我用微信抢红包神器，自动抢了很多红包，获得称号:"
+					+ getNickName(context)
+					+ "，请在百度应用市场中搜索[微信抢红包神器]";
 		}
 		return "我用抢红包微信神器，自动抢了很多红包，获得称号:"
-				+ getNickName(context)
-				+ "，请在百度应用市场中搜索[抢红包神器]";
+					+ getNickName(context)+"，下载地址："
+					+LockService.shareUrl;
 	}
 
 	public static String getNickName(Context context) {

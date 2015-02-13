@@ -57,7 +57,7 @@ public class SoundUtil {
 			soundPool.play(soundPoolMap.get(SOUND_TYPE_EARN_MONEY), volume,volume, 1, 1, 1f);
 			break;
 		case SOUND_TYPE_LOTTERY:
-			soundPool.play(soundPoolMap.get(SOUND_TYPE_LOTTERY), volume,volume, 1, 0, 1f);
+			soundPool.play(soundPoolMap.get(SOUND_TYPE_LOTTERY), volume,volume, 1, 1, 1f);
 			break;
 		default:
 			break;

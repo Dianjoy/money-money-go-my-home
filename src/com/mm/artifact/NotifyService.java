@@ -31,6 +31,7 @@ public class NotifyService extends AccessibilityService implements
 		
 		
 //		System.out.println("-------------------走了辅助辅助辅助-----------");
+		Logger.v("-------------------走了辅助辅助辅助-----------");
 //		if(Utils.getQHBState(getApplicationContext()) == false){
 //			return;
 //		}
@@ -79,6 +80,7 @@ public class NotifyService extends AccessibilityService implements
 //			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //			startActivity(intent);
 //			System.out.println("发送aaaaaaaaaaaa广播");
+			Logger.v("发送aaaaaaaaaaaa广播");
 			sendBroadcast(new Intent("aaaaaaaaaaaaaaaaaaaa"));
 		}
 	}
