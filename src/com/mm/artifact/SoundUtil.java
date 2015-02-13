@@ -54,7 +54,7 @@ public class SoundUtil {
 		// 参数：1、Map中取值 2、当前音量 3、最大音量 4、优先级 5、重播次数 6、播放速度
 		switch (type) {
 		case SOUND_TYPE_EARN_MONEY:
-			soundPool.play(soundPoolMap.get(SOUND_TYPE_EARN_MONEY), volume,volume, 1, 2, 1f);
+			soundPool.play(soundPoolMap.get(SOUND_TYPE_EARN_MONEY), volume,volume, 1, 1, 1f);
 			break;
 		case SOUND_TYPE_LOTTERY:
 			soundPool.play(soundPoolMap.get(SOUND_TYPE_LOTTERY), volume,volume, 1, 0, 1f);
