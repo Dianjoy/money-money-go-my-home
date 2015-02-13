@@ -45,7 +45,7 @@ public class SettingActivity extends BaseActivity {
 		tv_back.setOnClickListener(this);
 		tv_version = (TextView) findViewById(R.id.tv_version);
 		try {
-			tv_version.setText(getVersionName());
+			tv_version.setText("v"+getVersionName());
 		} catch (Exception e) {
 			tv_version.setText("");
 		}

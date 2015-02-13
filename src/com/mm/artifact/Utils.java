@@ -190,8 +190,8 @@ public class Utils {
 //		}
 //		return false;
 		Date date = new Date();
-		System.out.println(String.valueOf(date.getHours()));
-		if (date.getHours() > 0 & date.getHours() < 8) {
+//		System.out.println(String.valueOf(date.getHours()));
+		if (date.getHours() >= 0 && date.getHours() <= 8) {
 			return true;
 		}
 		return false;

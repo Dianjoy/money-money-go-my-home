@@ -68,7 +68,7 @@ public class HomeActivity extends BaseActivity {
 			iv_center_c.setVisibility(View.INVISIBLE);
 		}else if(time <= 1){
 			iv_center_c.setVisibility(View.VISIBLE);
-			iv_center_c.setBackgroundResource(R.drawable.nick_name_flash);
+			iv_center_c.setBackgroundResource(R.drawable.nick_name_fengshen);
 			tv_nick_name.setText("风神");
 		}else if(time <= 10){
 			iv_center_c.setVisibility(View.VISIBLE);
@@ -76,11 +76,11 @@ public class HomeActivity extends BaseActivity {
 			tv_nick_name.setText("闪电侠");
 		}else if(time <= 60){
 			iv_center_c.setVisibility(View.VISIBLE);
-			iv_center_c.setBackgroundResource(R.drawable.nick_name_flash);
+			iv_center_c.setBackgroundResource(R.drawable.nick_name_paonan);
 			tv_nick_name.setText("跑男");
 		}else {
 			iv_center_c.setVisibility(View.VISIBLE);
-			iv_center_c.setBackgroundResource(R.drawable.nick_name_flash);
+			iv_center_c.setBackgroundResource(R.drawable.nick_name_woniu);
 			tv_nick_name.setText("蜗牛");
 		}
 	}
@@ -100,7 +100,10 @@ public class HomeActivity extends BaseActivity {
 	        startActivity(Intent.createChooser(intent, Constants.SHARE_TITLE));
 			break;
 		case R.id.tv_more:
-			Utils.startNewActivity(HomeActivity.this,HongbaoDesUrlActivity.class);
+			if(!Utils.startOpen(HomeActivity.this)){
+				Utils.startNewActivity(HomeActivity.this,
+						HongbaoDesUrlActivity.class);
+			}
 			break;
 		default:
 			break;

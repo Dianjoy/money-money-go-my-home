@@ -74,8 +74,10 @@ public class BeginActivity extends BaseActivity {
 					OpenServiceGuideActivity.class);
 			break;
 		case R.id.tv_more:
-			Utils.startNewActivity(BeginActivity.this,
-					HongbaoDesUrlActivity.class);
+			if(!Utils.startOpen(BeginActivity.this)){
+				Utils.startNewActivity(BeginActivity.this,
+						HongbaoDesUrlActivity.class);
+			}
 			break;
 		case R.id.tv_setting:
 			Utils.startNewActivity(BeginActivity.this, SettingActivity.class);
