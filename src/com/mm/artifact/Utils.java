@@ -55,9 +55,25 @@ import com.example.weixintext.R;
 
 public class Utils {
 
-//	public static String getShareText(Context context){
-//		getpre
-//	}
+	public static String getShareText(Context context){
+		return "我用抢红包微信神器，自动抢了很多红包，获得称号:"+getNickName(context)+"，下载地址：http://www.hongbaosuoping.com/client_share/download/hbsq.html";
+	}
+	
+	public static String getNickName(Context context){
+		String timeString = Utils.getUseTime(context);
+		Float time = Float.valueOf(timeString);
+		if(time == 0){
+			return "无称号";
+		}else if(time <= 1){
+			return "风神";
+		}else if(time <= 10){
+			return "闪电侠";
+		}else if(time <= 60){
+			return "跑男";
+		}else {
+			return "蜗牛";
+		}
+	}
 	
 	// 震动
 	public static void vibrate(Context context) {

@@ -106,7 +106,7 @@ public class SettingActivity extends BaseActivity {
 			Intent intent=new Intent(Intent.ACTION_SEND);   
 	        intent.setType("image/*");   
 	        intent.putExtra(Intent.EXTRA_SUBJECT, Constants.SHARE_SUBJECT);
-	        intent.putExtra(Intent.EXTRA_TEXT, Constants.SHARE_TEXT);
+	        intent.putExtra(Intent.EXTRA_TEXT, Utils.getShareText(SettingActivity.this));
 	        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
 	        startActivity(Intent.createChooser(intent, Constants.SHARE_TITLE));
 			break;

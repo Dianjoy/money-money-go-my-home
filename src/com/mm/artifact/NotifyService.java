@@ -78,7 +78,7 @@ public class NotifyService extends AccessibilityService implements
 //			Intent intent = new Intent(this,BeginActivity.class);
 //			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //			startActivity(intent);
-			
+			System.out.println("发送aaaaaaaaaaaa广播");
 			sendBroadcast(new Intent("aaaaaaaaaaaaaaaaaaaa"));
 		}
 	}

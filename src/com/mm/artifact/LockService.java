@@ -43,9 +43,9 @@ public class LockService extends Service {
 		zdLockIntent = new Intent(LockService.this, NotifyRedPackActivity.class);
 		zdLockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		IntentFilter intentFilter = new IntentFilter();
-		 intentFilter.addAction(Intent.ACTION_SCREEN_ON);
-		 intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
-		 intentFilter.addAction(Intent.ACTION_USER_PRESENT);
+		intentFilter.addAction(Intent.ACTION_SCREEN_ON);
+		intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
+		intentFilter.addAction(Intent.ACTION_USER_PRESENT);
 		intentFilter.addAction("aaaaaaaaaaaaaaaaaaaa");
 		registerReceiver(screenReceiver, intentFilter);
 		startRemoteProcress();
@@ -109,11 +109,12 @@ public class LockService extends Service {
 		public void onReceive(Context arg0, Intent intent) {
 			String action = intent.getAction();
 			// Log.i("on", action);
+			System.out.println("收到了广播：" + action);
 			if (action.equals("aaaaaaaaaaaaaaaaaaaa")) {
 //				if (telStatus == 1) {
 //					return;
 //				}
-				
+				System.out.println("接收到了aaaaaaaa广播");
 				if(Utils.getQHBState(getApplicationContext()) == false){
 					return;
 				}

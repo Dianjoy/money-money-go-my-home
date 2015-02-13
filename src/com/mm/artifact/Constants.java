@@ -17,8 +17,6 @@ public class Constants {
 	/** 是否开启了辅助功能 */
 	public static final String IS_OPEN_ASSIST = "is_open_assist";
 	
-	/** 分享的文案 */
-	public static final String SHARE_TEXT = "我用抢红包微信神器，自动抢了很多红包，获得称号XXXX，下载地址：http://www.hongbaosuoping.com/client_share/download/hbsq.html";
 	/** 分享的标题 */
 	public static final String SHARE_TITLE = "抢红包神器";
 	/** 分享的subject */
