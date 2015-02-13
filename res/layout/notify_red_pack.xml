@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aa3f1f15"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="300dip"
+        android:layout_height="225dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/redpack_little" >
+
+        <RelativeLayout
+            android:id="@+id/rl_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/tv_tips"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dip"
+            android:background="@drawable/begin_center_button" >
+
+            <TextView
+                android:id="@+id/tv_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="打开微信"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_red_pack_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/rl_bottom"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dip"
+            android:text="有红包，赶快来抢"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="5dip"
+            android:text="有红包啦！"
+            android:textColor="@color/task_yellow_focus"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_ignor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:text="忽略"
+            android:textColor="@color/task_yellow_focus"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

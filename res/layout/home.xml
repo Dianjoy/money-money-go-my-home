@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3f1f15" >
+
+    <ImageView
+        android:id="@+id/iv_text"
+        android:layout_width="250dip"
+        android:layout_height="35dip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dip"
+        android:src="@drawable/begin_text" />
+
+    <RelativeLayout
+        android:layout_width="300dip"
+        android:layout_height="450dip"
+        android:layout_below="@id/iv_text"
+        android:layout_marginTop="30dip"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/begin_center" >
+
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="10dip"
+            android:text="设置"
+            android:textColor="#ffaa3b"
+            android:textSize="14sp" />
+
+        <TextView 
+            android:id="@+id/tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="aaaaaaa"
+            android:gravity="center"
+            android:layout_below="@id/tv_setting"
+            android:layout_centerHorizontal="true"
+            />
+        
+        <ImageView
+            android:id="@+id/iv_center_c"
+            android:layout_width="125dip"
+            android:layout_height="125dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dip"
+            android:layout_below="@id/tips"
+            />
+		
+        
+        
+        <TextView
+            android:id="@+id/tv_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_center_c"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dip"
+            android:textColor="@color/white"
+            android:text="闪电侠"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nick_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dip"
+            android:background="@drawable/begin_center_button" >
+
+            <TextView
+                android:id="@+id/tv_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="炫耀一下"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_bottom"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:text="更多红包>"
+            android:textColor="#ffaa3b"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

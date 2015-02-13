@@ -1,0 +1,181 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/setfrg_set_divide"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+            android:id="@+id/rl_head"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="#b43f32" >
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="12dip"
+                android:layout_centerVertical="true"
+                android:layout_height="20dip"
+                android:layout_marginLeft="10dip"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dip"
+                android:text="返回"
+                android:layout_toRightOf="@id/iv_back"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="设置"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+        
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+    <RelativeLayout
+        android:id="@+id/rl_qiang"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/white"
+        android:layout_marginTop="10dip"
+        android:clickable="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:text="抢微信红包"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/setfrg_set_divide" />
+
+        <ImageView
+            android:id="@+id/qiang_state"
+            android:layout_width="55.5dip"
+            android:layout_height="39.5dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/switch_open" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_vibrate"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/white"
+        android:clickable="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:text="声音振动提示"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/setfrg_set_divide" />
+
+        <ImageView
+            android:id="@+id/vibrate_state"
+            android:layout_width="55.5dip"
+            android:layout_height="39.5dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/switch_open" />
+    </RelativeLayout>
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="5dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/setfrg_set_divide" />
+    
+    <RelativeLayout
+        android:id="@+id/rl_dont_distrub"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/white"
+        android:clickable="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:text="睡觉时免打扰"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/setfrg_set_divide" />
+
+        <ImageView
+            android:id="@+id/distrub_state"
+            android:layout_width="55.5dip"
+            android:layout_height="39.5dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/switch_open" />
+    </RelativeLayout>
+
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:text="晚上24:00-08:00不提示"
+        android:textColor="#999999"
+        android:textSize="12sp"
+        />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_share"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_h"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/shape_yuanjiaobg"
+        android:gravity="center"
+        android:text="分享神器给好友"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#999999"
+        android:textSize="@dimen/button_size" 
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        />
+
+</LinearLayout>

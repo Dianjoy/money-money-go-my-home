@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="215dip"
+    android:layout_height="wrap_content" 
+    android:background="@drawable/bg_toast"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:text="充值成功，请稍后"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>

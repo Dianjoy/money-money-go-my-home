@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="button_text_color">#ffffff</color>
+    
+    
+    <color name="red">#ff0000</color>
+    <!-- 红色 -->
+    <color name="white">#ffffff</color>
+    <!-- 白色 -->
+    <color name="gainsboro">#DCDCDC</color>
+    <!-- 淡灰色 -->
+    <color name="black">#333333</color>
+    <!-- 黑色 -->
+    <color name="orange">#ec7811</color>
+    <!-- 橘黄色 -->
+    <color name="blackw">#999999</color>
+    <!-- 黑灰色 -->
+    <color name="wgray">#F1F1F1</color>
+    <!-- 白灰色 -->
+    <color name="lback">#DDDDDD</color>
+    <!-- 黑灰色 -->
+    <color name="phoneorange">#ed7914</color>
+    <!-- 橘黄色 -->
+    <color name="bt_duihuan">#ff8c38</color>
+    <!-- 橘黄色 -->
+    <color name="bt_focus">#e0dfdf</color>
+    <color name="bt_red_pack_share">#ef7124</color>
+    <!-- 灰色 -->
+    <color name="bt_duihuan_focus">#d36a1e</color>
+    <!-- 橘黄色 -->
+    <color name="color_shouyi">#fcfcfc</color>
+    <color name="color_news">#cccccc</color>
+    <color name="color_system">#ee7e1b</color>
+    <color name="color_activity">#26aafe</color>
+    <color name="color_task">#fe6244</color>
+    <color name="color_task_done">#53c5de</color>
+    <color name="lock_bottom_text">#5b5b5b</color>
+    <color name="account_bg">#eeeae4</color>
+    <color name="account_text_black">#666666</color>
+    <color name="account_task_blue">#6bcbfd</color>
+    <color name="account_task_orange">#ffad2d</color>
+    <color name="account_task_dorange">#d99325</color>
+    <color name="accoout_share_bg">#00000000</color>
+    <color name="transparent">#cc000000</color>
+    <color name="btn_background">#ee6d25</color>
+    <color name="btn_focus_background">#e8551c</color>
+    <color name="view_background">#80000000</color>
+    <color name="user_title_default">#ee6d25</color>
+    <color name="user_title_select">#e8551c</color>
+    <color name="user_title_line">#c0c0c0</color>
+    <color name="user_list_bg">#f4f2ee</color>
+    <color name="setfrg_set_color">#aaffffff</color>
+    <color name="setfrg_set_divide">#eaeaea</color>
+    <color name="task_blue_normal">#63bde3</color>
+    <color name="task_blue_focus">#63bde3</color>
+    <color name="task_green_normal">#99e363</color>
+    <color name="task_green_focus">#99e363</color>
+    <color name="task_yellow_normal">#e3bd63</color>
+    <color name="task_yellow_focus">#e3bd63</color>
+    <color name="task_purple_normal">#f291e5</color>
+    <color name="task_purple_focus">#f291e5</color>
+    <color name="setfrg_set_bg">#f4f2ee</color>
+    <color name="setfrg_item_bg">#666666</color>
+    <color name="news_detail_orange">#ffad2d</color>
+    <color name="user_register_gray">#999999</color>
+    <color name="main_tab_bg">#aaf1f1f1</color>
+    <color name="main_mask">#66000000</color>
+	<color name="main_text_color">#da6a4b</color>
+</resources>
