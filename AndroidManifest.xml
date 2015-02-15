@@ -58,7 +58,18 @@
                 <action android:name="com.mm.artifact.ILockRemoteService" />
             </intent-filter>
         </service>
+		<receiver
+            android:name="com.mm.artifact.MainReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.happy.lock.monitor" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
         <activity
             android:name="com.mm.artifact.BeginActivity"
             android:launchMode="singleTask"
@@ -102,7 +113,7 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         
-        <meta-data android:value="wandoujia" android:name="UMENG_CHANNEL"/>
+        <meta-data android:value="goapk" android:name="UMENG_CHANNEL"/>
         <meta-data android:value="54dd2e54fd98c5f3a70003a2" android:name="UMENG_APPKEY"></meta-data>
         <service
     android:name="com.umeng.update.net.DownloadingService"

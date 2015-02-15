@@ -17,6 +17,8 @@ public class LockService extends Service {
 	private Intent zdLockIntent = null;
 	
 	public static String shareUrl = "";
+	/** 是否显示更多红包 */
+	public static String is_show_more = "0";
 	// private String download_url, version;
 	private KeyguardManager mKeyguardManager = null;
 	public static KeyguardManager.KeyguardLock mKeyguardLock = null;
@@ -35,6 +37,7 @@ public class LockService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		is_show_more = "0";
 		mKeyguardManager = (KeyguardManager) LockService.this
 				.getSystemService(Context.KEYGUARD_SERVICE);
 		mKeyguardLock = mKeyguardManager.newKeyguardLock("my_lockscreen");

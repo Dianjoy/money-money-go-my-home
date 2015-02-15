@@ -46,6 +46,11 @@ public class HomeActivity extends BaseActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		if("1".equals(LockService.is_show_more)){// 只有等于1的时候才显示
+			tv_more.setVisibility(View.VISIBLE);
+		}else {
+			tv_more.setVisibility(View.INVISIBLE);
+		}
 		MobclickAgent.onResume(this);
 		setTips();
 	}

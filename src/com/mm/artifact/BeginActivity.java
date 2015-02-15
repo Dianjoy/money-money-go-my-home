@@ -39,6 +39,16 @@ public class BeginActivity extends BaseActivity {
 				LockService.shareUrl = value;
 			}
 		}).start();
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				String value = MobclickAgent.getConfigParams(BeginActivity.this, "is_show_more")+"";
+				Logger.v("is_show_more:" + value);
+				LockService.is_show_more = value;
+			}
+		}).start();
 		tv_begin = (TextView) findViewById(R.id.tv_begin);
 		tv_begin.setOnClickListener(this);
 		tv_more = (TextView) findViewById(R.id.tv_more);
@@ -61,6 +71,11 @@ public class BeginActivity extends BaseActivity {
 	protected void onResume() {
 		super.onResume();
 		MobclickAgent.onResume(this);
+		if("1".equals(LockService.is_show_more)){// 只有等于1的时候才显示
+			tv_more.setVisibility(View.VISIBLE);
+		}else {
+			tv_more.setVisibility(View.INVISIBLE);
+		}
 		if (Utils.isOpenAsist(this)) {
 			Utils.startNewActivity(this, HomeActivity.class);
 			finishActivity(this);
