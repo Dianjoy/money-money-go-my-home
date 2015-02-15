@@ -7,8 +7,6 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.media.SoundPool.OnLoadCompleteListener;
 
-import com.example.weixintext.R;
-
 public class SoundUtil {
 	SoundPool soundPool;
 	/** 抽奖时候的音效 */

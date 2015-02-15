@@ -5,7 +5,6 @@ import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.weixintext.R;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 

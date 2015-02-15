@@ -1,11 +1,10 @@
 package com.mm.artifact;
 
-import com.example.weixintext.R;
-import com.umeng.analytics.MobclickAgent;
-
 import android.os.Message;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.umeng.analytics.MobclickAgent;
 
 public class NoticeActivity extends BaseActivity {
 	private RelativeLayout rl_bottom;

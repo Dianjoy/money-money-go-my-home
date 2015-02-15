@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.weixintext"
+    package="com.mm.artifact"
     android:versionCode="100"
     android:versionName="1.0.0" >
 
@@ -8,18 +8,18 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <application
         android:allowBackup="true"
@@ -102,7 +102,7 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         
-        <meta-data android:value="default" android:name="UMENG_CHANNEL"/>
+        <meta-data android:value="wandoujia" android:name="UMENG_CHANNEL"/>
         <meta-data android:value="54dd2e54fd98c5f3a70003a2" android:name="UMENG_APPKEY"></meta-data>
         <service
     android:name="com.umeng.update.net.DownloadingService"

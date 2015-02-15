@@ -2,9 +2,7 @@ package com.mm.artifact;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +10,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.example.weixintext.R;
 
 /**
  * dialog工具 目前有如下对话框类型： R.layout.dialog_warning：一个文字提示+一个按钮

@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.weixintext.R;
 import com.umeng.analytics.MobclickAgent;
 
 /**

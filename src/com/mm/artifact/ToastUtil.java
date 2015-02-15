@@ -1,7 +1,5 @@
 package com.mm.artifact;
 
-import com.example.weixintext.R;
-
 import android.app.Activity;
 import android.os.Handler;
 import android.view.Gravity;

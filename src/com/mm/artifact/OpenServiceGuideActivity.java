@@ -1,17 +1,14 @@
 package com.mm.artifact;
 
-import com.example.weixintext.R;
-import com.umeng.analytics.MobclickAgent;
-
-import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Message;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * 设置页面

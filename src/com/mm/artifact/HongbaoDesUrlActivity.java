@@ -14,7 +14,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import com.example.weixintext.R;
 import com.umeng.analytics.MobclickAgent;
 
 public class HongbaoDesUrlActivity extends BaseActivity {
