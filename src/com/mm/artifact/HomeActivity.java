@@ -3,6 +3,7 @@ package com.mm.artifact;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,7 +23,7 @@ public class HomeActivity extends BaseActivity {
 	TextView tv_tips;
 	TextView tv_setting;
 	TextView tv_more;
-	TextView tv_nick_name;
+	TextView tv_nick_name,tv_nick_name1;
 	ImageView iv_center_c;
 	RelativeLayout rl_bottom;
 	LinearLayout ll_lock, ll_wifi;
@@ -44,6 +45,7 @@ public class HomeActivity extends BaseActivity {
 		tv_more.setOnClickListener(this);
 		tv_nick_name = (TextView) findViewById(R.id.tv_nick_name);
 		iv_center_c = (ImageView) findViewById(R.id.iv_center_c);
+		tv_nick_name1=(TextView) findViewById(R.id.tv_nick_name1);
 
 		ll_lock = (LinearLayout) findViewById(R.id.ll_lock);
 		ll_wifi = (LinearLayout) findViewById(R.id.ll_wifi);
@@ -75,24 +77,29 @@ public class HomeActivity extends BaseActivity {
 				+ Utils.getQiangCounts(this) + "次，平均耗时时间" + timeString + "s");
 		Float time = Float.valueOf(timeString);
 		if (time == 0) {
-			tv_nick_name.setText("无称号");
+			tv_nick_name.setText("试试下面的红包APP");
+			tv_nick_name1.setText("最火的赚钱软件,不用一年错过上千块");
 			iv_center_c.setVisibility(View.INVISIBLE);
 		} else if (time <= 1) {
 			iv_center_c.setVisibility(View.VISIBLE);
 			iv_center_c.setBackgroundResource(R.drawable.nick_name_fengshen);
 			tv_nick_name.setText("风神");
+			tv_nick_name1.setVisibility(View.GONE);
 		} else if (time <= 10) {
 			iv_center_c.setVisibility(View.VISIBLE);
 			iv_center_c.setBackgroundResource(R.drawable.nick_name_flash);
 			tv_nick_name.setText("闪电侠");
+			tv_nick_name1.setVisibility(View.GONE);
 		} else if (time <= 60) {
 			iv_center_c.setVisibility(View.VISIBLE);
 			iv_center_c.setBackgroundResource(R.drawable.nick_name_paonan);
 			tv_nick_name.setText("跑男");
+			tv_nick_name1.setVisibility(View.GONE);
 		} else {
 			iv_center_c.setVisibility(View.VISIBLE);
 			iv_center_c.setBackgroundResource(R.drawable.nick_name_woniu);
 			tv_nick_name.setText("蜗牛");
+			tv_nick_name1.setVisibility(View.GONE);
 		}
 	}
 
