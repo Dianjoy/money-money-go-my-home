@@ -78,7 +78,7 @@ public class HomeActivity extends BaseActivity {
 		Float time = Float.valueOf(timeString);
 		if (time == 0) {
 			tv_nick_name.setText("试试下面的红包APP");
-			tv_nick_name1.setText("最火的赚钱软件,不用一年错过上千块");
+			tv_nick_name1.setText("最火的赚钱软件,一年不用,错过上千块");
 			iv_center_c.setVisibility(View.INVISIBLE);
 		} else if (time <= 1) {
 			iv_center_c.setVisibility(View.VISIBLE);
