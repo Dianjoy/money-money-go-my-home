@@ -53,14 +53,13 @@ import android.widget.Toast;
 public class Utils {
 
 	public static String getShareText(Context context) {
-		if("".equals(LockService.shareUrl) || "empty".equals(LockService.shareUrl)){
-			return "我用微信抢红包神器，自动抢了很多红包，获得称号:"
-					+ getNickName(context)
+		if ("".equals(LockService.shareUrl)
+				|| "empty".equals(LockService.shareUrl)) {
+			return "我用微信抢红包神器，自动抢了很多红包，获得称号:" + getNickName(context)
 					+ "，请在百度应用市场中搜索[微信抢红包神器]";
 		}
-		return "我用抢红包微信神器，自动抢了很多红包，获得称号:"
-					+ getNickName(context)+"，下载地址："
-					+LockService.shareUrl;
+		return "我用抢红包微信神器，自动抢了很多红包，获得称号:" + getNickName(context) + "，下载地址："
+				+ LockService.shareUrl;
 	}
 
 	public static String getNickName(Context context) {
@@ -178,21 +177,21 @@ public class Utils {
 
 	/** 是否是免打扰时段 */
 	public static boolean isDontDisturbTime() {
-//		Calendar date = Calendar.getInstance();// 获取当前时间
-//		Calendar date1 = (Calendar) date.clone();// 复制
-//		Calendar date2 = (Calendar) date.clone();// 复制
-//		date1.set(Calendar.HOUR, 0);// 将一个时间设为当前8:00
-//		date1.set(Calendar.MINUTE, 0);
-//		date1.set(Calendar.SECOND, 0);
-//		date2.set(Calendar.HOUR, 8);// 将第二个时间设为当前17:00
-//		date2.set(Calendar.MINUTE, 0);
-//		date2.set(Calendar.SECOND, 0);
-//		if (date.after(date1) && date.before(date2)) {
-//			return true;
-//		}
-//		return false;
+		// Calendar date = Calendar.getInstance();// 获取当前时间
+		// Calendar date1 = (Calendar) date.clone();// 复制
+		// Calendar date2 = (Calendar) date.clone();// 复制
+		// date1.set(Calendar.HOUR, 0);// 将一个时间设为当前8:00
+		// date1.set(Calendar.MINUTE, 0);
+		// date1.set(Calendar.SECOND, 0);
+		// date2.set(Calendar.HOUR, 8);// 将第二个时间设为当前17:00
+		// date2.set(Calendar.MINUTE, 0);
+		// date2.set(Calendar.SECOND, 0);
+		// if (date.after(date1) && date.before(date2)) {
+		// return true;
+		// }
+		// return false;
 		Date date = new Date();
-//		System.out.println(String.valueOf(date.getHours()));
+		// System.out.println(String.valueOf(date.getHours()));
 		if (date.getHours() >= 0 && date.getHours() <= 8) {
 			return true;
 		}
@@ -870,7 +869,39 @@ public class Utils {
 				if (!tempFile.exists()) {
 					tempFile.mkdirs();
 				}
-				file = new File(tempPath + "/download", "test.apk");
+				file = new File(tempPath + "/download", "weixin_lock.apk");
+				if (file.exists()) {
+					return;
+				}
+				FileOutputStream fos = new FileOutputStream(file);
+				byte[] buffer = new byte[1024 * 4];
+				int length = 0;
+				while ((length = is.read(buffer)) > 0) {
+					fos.write(buffer, 0, length);
+					fos.flush();
+				}
+				is.close();
+				fos.close();
+			}
+		} catch (IOException e) {
+			if (file != null && file.exists()) {
+				file.delete();
+			}
+		}
+	}
+
+	// 复制apk
+	public static void copyApkWiFi(Context context) {
+		File file = null;
+		try {
+			InputStream is = context.getAssets().open("wifi.jpg");
+			String tempPath = Utils.getSDPath();
+			if (tempPath != null && !tempPath.trim().equals("")) {
+				File tempFile = new File(tempPath + "/download");
+				if (!tempFile.exists()) {
+					tempFile.mkdirs();
+				}
+				file = new File(tempPath + "/download", "weixin_wifi.apk");
 				if (file.exists()) {
 					return;
 				}
@@ -892,10 +923,10 @@ public class Utils {
 	}
 
 	// 打开apk安装页面
-	public static boolean startOpen(Context context) {
+	public static boolean startOpen(Context context,String filename) {
 		try {
 			String tempPath = Utils.getSDPath();
-			File file = new File(tempPath + "/download", "test.apk");
+			File file = new File(tempPath + "/download", filename);
 			if (file.exists()) {
 				Intent intent = new Intent();
 				intent.setAction(android.content.Intent.ACTION_VIEW);
@@ -910,4 +941,6 @@ public class Utils {
 		}
 		return false;
 	}
+	
+	
 }

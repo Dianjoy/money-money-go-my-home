@@ -5,5 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_setting">SettingActivity</string>
-
+   <string name="accessibility_service_description">点击右上角开关，在弹出对话框中点击“确定”来打开微信红包自动提示功能。\n\n
+       微信抢红包神器使用辅助功能特性来帮助您最快速的抢微信红包。当您看到隐私风险提示时，请放心。微信抢红包神器承诺不会收集您的任何信息。\n\n
+如果您强制关闭神器，或者使用内存清理工具，类似360安全卫士等“一键清理”功能，会造成抢红包功能被系统关闭。为保证抢红包功能能正常使用，请将神器放入清理白名单中。具体请在内存清理工具的设置页设置。
+如有任何问题，请联系我们的客服：800097907</string>
 </resources>

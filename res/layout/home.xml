@@ -13,11 +13,11 @@
         android:src="@drawable/begin_text" />
 
     <RelativeLayout
-        android:layout_width="300dip"
+        android:layout_width="350dip"
         android:layout_height="450dip"
         android:layout_below="@id/iv_text"
-        android:layout_marginTop="30dip"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dip"
         android:background="@drawable/begin_center" >
 
         <TextView
@@ -32,28 +32,24 @@
             android:textColor="#ffaa3b"
             android:textSize="14sp" />
 
-        <TextView 
+        <TextView
             android:id="@+id/tips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="aaaaaaa"
-            android:gravity="center"
             android:layout_below="@id/tv_setting"
             android:layout_centerHorizontal="true"
-            />
-        
+            android:gravity="center"
+            android:text="aaaaaaa"
+            android:textColor="@color/white" />
+
         <ImageView
             android:id="@+id/iv_center_c"
             android:layout_width="125dip"
             android:layout_height="125dip"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dip"
             android:layout_below="@id/tips"
-            />
-		
-        
-        
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dip" />
+
         <TextView
             android:id="@+id/tv_nick_name"
             android:layout_width="wrap_content"
@@ -61,27 +57,81 @@
             android:layout_below="@id/iv_center_c"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dip"
-            android:textColor="@color/white"
             android:text="闪电侠"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <RelativeLayout
             android:id="@+id/rl_bottom"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_nick_name"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dip"
-            android:background="@drawable/begin_center_button" >
+            android:layout_marginTop="30dip" >
 
-            <TextView
-                android:id="@+id/tv_begin"
+            <LinearLayout
+                android:id="@+id/ll_lock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="炫耀一下"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/lock" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="划屏就能赚钱"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/begin_center_button" >
+
+                <TextView
+                    android:id="@+id/tv_begin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="炫耀一下"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_wifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/wifi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="免费上网，还有钱赚"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
         </RelativeLayout>
 
         <TextView
@@ -93,7 +143,8 @@
             android:layout_marginTop="10dip"
             android:text="更多红包>"
             android:textColor="#ffaa3b"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </RelativeLayout>
